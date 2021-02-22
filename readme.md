@@ -1,4 +1,6 @@
 
+[![Image from Gyazo](https://i.gyazo.com/92b73b1253594a5c39761079492cb9da.gif)](https://gyazo.com/92b73b1253594a5c39761079492cb9da)
+
 ## google-auth-token-generator
 
 Gooogle系APIのtoken.jsonを取得するためのCLIツールです。
