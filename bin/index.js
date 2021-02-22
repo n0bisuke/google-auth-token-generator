@@ -43,8 +43,8 @@ const inquirer = require("inquirer");
         // console.log(answers2nd);
 
         const auth = await authorize(JSON.parse(credentials), answers2nd.Permissions);
-        console.log(auth);
-
+        // console.log(auth);
+    
     } catch (error) {
         // console.log(`ほげ:`,error.message);
         if(error.code === 'ENOENT'){
