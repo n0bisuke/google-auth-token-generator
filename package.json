@@ -10,6 +10,10 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/n0bisuke/google-auth-token-generator.git"
+  },
   "author": "n0bisuke",
   "license": "ISC",
   "dependencies": {
