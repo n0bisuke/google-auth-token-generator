@@ -6,8 +6,6 @@ const fs = require('fs');
 const permissions = require('./permissions');
 const authorize = require('./authorize');
 
-const gdriveList = permissions.GoogleDrive.map(item => {return {name: item}});
-
 const inquirer = require("inquirer");
 
 (async () => {
@@ -22,20 +20,20 @@ const inquirer = require("inquirer");
             type: 'list',
             name: 'API',
             message: 'Which one do you use?',
-            choices: [
-                'Google Drive',
-                // 'Gmail',
-                // ''
-            ],
-            filter: function( val ) { return val.toLowerCase(); }
+            choices: Object.keys(permissions),
+            //filter: val => val.toLowerCase()
         }]);
+
+        // console.log(answers1st.API,permissions[`${answers1st.API}`]);
+
+        const permissionsList = permissions[answers1st.API].list.map(item => {return {name: item}});
 
         //Permission Select
         const answers2nd = await inquirer.prompt([{
-            type: "checkbox",
-            message: "Select Permissions",
-            name: "Permissions",
-            choices: gdriveList,
+            type: 'checkbox',
+            message: `Select Permissions (see: ${permissions[answers1st.API].reference})`,
+            name: 'Permissions',
+            choices: permissionsList,
             validate: ( answer ) => {
                 if(answer.length < 1) return "You must choose at least one topping.";
                 return true;
@@ -48,6 +46,13 @@ const inquirer = require("inquirer");
         console.log(auth);
 
     } catch (error) {
+        // console.log(`ほげ:`,error.message);
+        if(error.code === 'ENOENT'){
+            console.log(`---------------`);
+            console.log(`ERROR: Can not open credentials.json. Get credentials.json first from the Google API site.`);
+            console.log(`---------------`);
+        }
+
         throw new Error(error);
     }
 
