@@ -4,7 +4,7 @@
   "description": "",
   "main": "bin/index.js",
   "bin": {
-    "google-auth-token-generator": "bin/index"
+    "google-auth-token-generator": "bin/index.js"
   },
   "preferGlobal": true,
   "scripts": {
