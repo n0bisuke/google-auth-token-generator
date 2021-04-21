@@ -50,6 +50,19 @@ const permissions = {
             `https://www.googleapis.com/auth/calendar.addons.execute`
         ]
     },
+
+    Youtube: {
+        reference: `https://developers.google.com/youtube/v3/guides/auth/server-side-web-apps?hl=en`,
+        list: [
+            `https://www.googleapis.com/auth/youtube`,
+            `https://www.googleapis.com/auth/youtube.channel-memberships.creator`,
+            `https://www.googleapis.com/auth/youtube.force-ssl`,
+            `https://www.googleapis.com/auth/youtube.readonly`,
+            `https://www.googleapis.com/auth/youtube.upload`,
+            `https://www.googleapis.com/auth/youtubepartner`,
+            `https://www.googleapis.com/auth/youtubepartner-channel-audit`
+        ]
+    }
 }
 
 module.exports = permissions;
