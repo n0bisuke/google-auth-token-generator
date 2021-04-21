@@ -9,7 +9,7 @@ const authorize = require('./authorize');
 const inquirer = require("inquirer");
 
 (async () => {
-    console.log('Google API Token Generator.');
+    console.log(`Google API Token Generator.`);
 
     try {
         //read file
