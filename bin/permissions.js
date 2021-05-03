@@ -62,6 +62,17 @@ const permissions = {
             `https://www.googleapis.com/auth/youtubepartner`,
             `https://www.googleapis.com/auth/youtubepartner-channel-audit`
         ]
+    },
+
+    GoogleSheets: {
+        reference: `https://developers.google.com/sheets/api/guides/authorizing?authuser=1`,
+        list: [
+            `https://www.googleapis.com/auth/spreadsheets.readonly`,
+            `https://www.googleapis.com/auth/spreadsheets`,
+            `https://www.googleapis.com/auth/drive.readonly`,
+            `https://www.googleapis.com/auth/drive.file`,
+            `https://www.googleapis.com/auth/drive`
+        ]
     }
 }
 

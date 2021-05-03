@@ -9,6 +9,8 @@ npx経由で実行すればインストール不要です。
 * Google Drive
 * Gmail
 * Google Calender
+* Youtube Data API
+* Google Sheets
 
 に対応しています。(2021/2/22時点)
 
