@@ -39,9 +39,21 @@ const {oAuth2ClientGen} = require('google-auth-token-generator');
 
 ```js
 const auth = oAuth2ClientGen({
-    library: google,
-    CREDENTIALS_PATH: `credentials.json`, // optional
-    TOKEN_PATH: 'token.json'; // optional
+  library: google,
+  /*ファイル利用の場合*/
+  CREDENTIALS_PATH: `credentials.json`, // optional
+  TOKEN_PATH: 'token.json'; // optional
+});
+```
+
+また、環境変数などを利用したい場合はCREDENTIALSとTOKENのキーにセットして下さい。ファイル読み込みはしません。
+
+```js
+const auth = oAuth2ClientGen({
+  library: google,
+  /*環境変数利用の場合*/
+  CREDENTIALS: process.env.GOOGLE_CREDENTIAL, //optional
+  TOKEN: process.env.GOOGLE_TOKEN,  //optional
 });
 ```
 
