@@ -5,15 +5,24 @@ const fs = require('fs');
 
 const permissions = require('./permissions');
 const authorize = require('./authorize');
+const inquirer = require('inquirer');
 
-const inquirer = require("inquirer");
+const CREDENTIALS_FILE_NAME = `credentials.json`;
+const ERROR_MSG = `ERROR: Can not open ${CREDENTIALS_FILE_NAME}. Get ${CREDENTIALS_FILE_NAME} first from the Google API site.`;
 
 (async () => {
-    console.log(`Google API Token Generator.`);
+    console.log(`[Google API Token Generator]`);
+    console.log(`Start checking ${CREDENTIALS_FILE_NAME} ...`);
+
+    //credentials.jsonが無かったら終わり
+    if(!fs.existsSync(CREDENTIALS_FILE_NAME)){
+        console.error(ERROR_MSG);
+        return;
+    }
 
     try {
         //read file
-        const credentials = await fs.readFileSync('credentials.json', 'utf8');
+        const credentials = await fs.readFileSync(CREDENTIALS_FILE_NAME, 'utf8');
         
         //API Select
         const answers1st = await inquirer.prompt([{
@@ -49,7 +58,7 @@ const inquirer = require("inquirer");
         // console.log(`ほげ:`,error.message);
         if(error.code === 'ENOENT'){
             console.log(`---------------`);
-            console.log(`ERROR: Can not open credentials.json. Get credentials.json first from the Google API site.`);
+            console.error(ERROR_MSG);
             console.log(`---------------`);
         }
 

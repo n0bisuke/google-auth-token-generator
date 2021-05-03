@@ -1,8 +1,8 @@
 {
   "name": "google-auth-token-generator",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "",
-  "main": "bin/index.js",
+  "main": "index.js",
   "bin": {
     "google-auth-token-generator": "bin/index.js"
   },
