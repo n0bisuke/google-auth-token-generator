@@ -1,6 +1,6 @@
 {
   "name": "google-auth-token-generator",
-  "version": "0.0.13",
+  "version": "0.1.0",
   "description": "",
   "main": "bin/index.js",
   "bin": {
@@ -15,6 +15,7 @@
     "url": "git+ssh://git@github.com/n0bisuke/google-auth-token-generator.git"
   },
   "author": "n0bisuke",
+  "keywords": ["Google","Youtube","Google Drive","Gmail","Google Sheets"],
   "license": "ISC",
   "dependencies": {
     "googleapis": "^67.1.0",
