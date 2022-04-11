@@ -23,7 +23,7 @@ const oAuth2ClientGen = (options) => {
     }
 
     const {client_secret, client_id, redirect_uris} = credentials.installed;
-    const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, redirect_uris[0]);
+    const oAuth2Client = new google.auth.OAuth2(client_id, client_secret, `urn:ietf:wg:oauth:2.0:oob`);
     oAuth2Client.setCredentials(token);
 
     return oAuth2Client;
